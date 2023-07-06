@@ -1,0 +1,565 @@
+@font-face {
+    font-family: domain;
+    src: url(/.domain.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    position: relative;
+    overflow: hidden;
+}
+
+#page{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+}
+
+#page canvas{
+    max-width: 100%;
+   max-height: 100%; 
+    object-fit: cover;
+    /* position: absolute; */
+    
+}
+
+#page1{
+    width: 100vw;
+   min-height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page1 h5 {
+    font-size: 25px;
+    font-weight: 300;
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    font-family: playfairdisplay;
+    position: absolute;
+    
+}
+#page1 h1 {
+    font-size: 70px;
+    font-weight: 400;
+    position: absolute;
+    top: 30%;
+    left: 53%;
+    width: 50%;
+    text-align: center;
+    transform: translate(-47%,0);
+    font-family: roobert-bold;
+}
+
+#page1 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    z-index: 9;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+}
+#page2{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page2 h4{
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%,0%);
+    font-weight: 400;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: playfairdisplay;
+    
+}
+
+#page2 p {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 55px;
+    text-align: center;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: roobert-bold;
+}
+#page3{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page3 h4 {
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%,0%);
+    font-weight: 400;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: playfairdisplay;
+}
+
+#page3 #a {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 55px;
+    text-align: center;
+    opacity: 0.1;
+    z-index: 9;
+    width: 65%;
+    font-family: roobert-bold;
+}
+#page3 #b {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 55px;
+    text-align: center;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: roobert;
+    font-family: roobert-bold;
+}
+
+#page h1{
+    position: absolute;
+    bottom: 45%;
+    right: 6%;
+    color: #fff;
+    font-size: 70px;
+    line-height: 70px;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 23%;
+    /* background-color: red; */
+    font-family: roobert-bold;
+
+}
+
+
+#page h4{
+    position: absolute;
+    bottom: 35%;
+    text-align: center;
+    font-weight: 400;
+    /* white-space: nowrap; */
+    right: 6%;
+    color: #fff;
+    font-size: 27px;
+    /* background-color: red; */
+    width: 20%;
+    font-family: playfairdisplay;
+}
+
+#nav{
+    width: 100%;
+    height: 35px;
+    font-size: 40px;
+    text-align: end;
+    padding-right: 50px;
+    background-color: transparent;
+    /* position: absolute; */
+    position: fixed;
+    z-index: 999;
+    color: white;
+}
+
+#page4{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page4>canvas{
+    width: 100%;
+    height: 100%; 
+     position: absolute;
+     scale: 1;
+}
+
+#page4 h1{
+    position: absolute;
+    z-index: 99;
+    bottom: 10%;
+    left: 15%;
+    width: 35%;
+    opacity: 0;
+    transition: all ease 1s;
+    color: white;
+    font-family: roobert-bold;
+   
+}
+/* 
+#page5{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+    
+} */
+
+#nav-page{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    top: -100%;
+    transition: all ease 1s;
+}
+
+#nav-page #left {
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+#nav-page #right {
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#nav-page #left h2{
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+#nav-page #left h3{
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+#nav-page #left h1{
+    font-size: 90px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+
+#nav-page #right h3{
+    padding-bottom: 60px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#nav-page #right h1{
+    font-size: 60px;
+    font-weight: 400;
+    margin-left: 50px;
+    /* white-space: nowrap; */
+}
+
+@media (max-width: 600px){
+  
+#main{
+    position: relative;
+    overflow: hidden;
+}
+
+#page{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+}
+
+#page canvas{
+    max-width: 100%;
+   max-height: 100%; 
+    object-fit: cover;
+    /* position: absolute; */
+    
+}
+
+#page1{
+    width: 100vw;
+   min-height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page1 h5 {
+    font-size: 25px;
+    font-weight: 300;
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    font-family: playfairdisplay;
+    
+}
+#page1 h1 {
+    font-size: 40px;
+    font-weight: 400;
+    position: absolute;
+    top: 13%;
+    left: 53%;
+    width: 50%;
+    text-align: center;
+    transform: translate(-47%,0);
+    font-family: roobert-bold;
+}
+
+#page1 img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    z-index: 9;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+}
+#page2{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page2 h4{
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    width: 50%;
+    margin-left: 30%;
+    transform: translate(-50%,0%);
+    font-weight: 400;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: playfairdisplay;
+    
+}
+
+#page2 p {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 26px;
+    text-align: center;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: roobert-bold;
+}
+#page3{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page3 h4 {
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%,0%);
+    font-weight: 400;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: playfairdisplay;
+}
+
+#page3 #a {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 27px;
+    text-align: center;
+    opacity: 0.1;
+    z-index: 9;
+    width: 65%;
+    font-family: roobert-bold;
+}
+#page3 #b {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 27px;
+    text-align: center;
+    opacity: 0.1;
+    z-index: 9;
+    font-family: roobert;
+    font-family: roobert-bold;
+}
+
+#page h1{
+    position: absolute;
+    bottom: 45%;
+    right: 25%;
+    color: #fff;
+    font-size: 40px;
+    line-height: 70px;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 23%;
+    /* background-color: red; */
+    font-family: roobert-bold;
+
+}
+
+
+#page h4{
+    position: absolute;
+    bottom: 25%;
+    text-align: center;
+    font-weight: 400;
+    /* white-space: nowrap; */
+    right: 15%;
+    color: #fff;
+    font-size: 27px;
+    /* background-color: red; */
+    width: 20%;
+    font-family: playfairdisplay;
+}
+
+#nav{
+    width: 100%;
+    height: 35px;
+    font-size: 40px;
+    text-align: end;
+    padding-right: 50px;
+    background-color: transparent;
+    /* position: absolute; */
+    position: fixed;
+    z-index: 999;
+    color: white;
+}
+
+#page4{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: relative;
+}
+
+#page4>canvas{
+    width: 100%;
+    height: 100%; 
+     position: absolute;
+     scale: 1;
+}
+
+#page4 h1{
+    position: absolute;
+    z-index: 99;
+    bottom: 10%;
+    left: 15%;
+    width: 35%;
+    opacity: 1;
+    font-size: 20px;
+    /* background-color: red; */
+    transition: all ease 1s;
+    color: white;
+    font-family: roobert-bold;
+   
+}
+
+/* #page5{
+    width: 100vw;
+    height: 10vh;
+    background-color: #FFFAF0;
+    position: relative;
+    
+} */
+
+#nav-page{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFAF0;
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    top: -100%;
+    transition: all ease 1s;
+}
+
+#nav-page #left {
+    width: 50%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+#nav-page #right {
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#nav-page #left h2{
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+#nav-page #left h3{
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+#nav-page #left h1{
+    font-size: 90px;
+    font-weight: 400;
+    margin-left: 50px;
+}
+
+#nav-page #right h3{
+    padding-bottom: 60px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#nav-page #right h1{
+    font-size: 60px;
+    font-weight: 400;
+    margin-left: 50px;
+    /* white-space: nowrap; */
+}  
+}
